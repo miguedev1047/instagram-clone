@@ -2,26 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 340 75% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 43 96% 56%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 98%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 283 39% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 340 75% 54%;
+
+    --radius: 0.5rem;
+
+    /* Instagram gradient colors */
+    --gradient-1: 37 97% 70%;
+    --gradient-2: 340 75% 54%;
+    --gradient-3: 283 39% 53%;
+
+    /* Chart colors inspired by Instagram's color palette */
+    --chart-1: 340 75% 54%;
+    --chart-2: 43 96% 56%;
+    --chart-3: 283 39% 53%;
+    --chart-4: 197 100% 64%;
+    --chart-5: 221 83% 53%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 340 75% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 43 96% 56%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 283 39% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 340 75% 54%;
+
+    /* Instagram gradient colors (slightly adjusted for dark mode) */
+    --gradient-1: 37 97% 65%;
+    --gradient-2: 340 75% 50%;
+    --gradient-3: 283 39% 48%;
+
+    /* Chart colors (slightly adjusted for dark mode) */
+    --chart-1: 340 75% 50%;
+    --chart-2: 43 96% 52%;
+    --chart-3: 283 39% 48%;
+    --chart-4: 197 100% 60%;
+    --chart-5: 221 83% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

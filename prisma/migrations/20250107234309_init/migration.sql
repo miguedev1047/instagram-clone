@@ -1,12 +1,14 @@
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL PRIMARY KEY,
+    "email" TEXT,
+    "name" TEXT,
     "fullName" TEXT,
-    "username" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
+    "username" TEXT,
+    "password" TEXT,
     "image" TEXT,
     "role" TEXT NOT NULL DEFAULT 'USER',
+    "emailVerified" DATETIME,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL
 );

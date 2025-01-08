@@ -1,6 +1,6 @@
 import {
   Card,
-  CardContent,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -9,31 +9,35 @@ import { cn } from '@/lib/utils'
 import { pacificoFont } from '@/app/fonts/_index'
 import { DownloadButtons } from '@/components/download-buttons'
 import { LoginForm } from '@/components/login-form'
+import { DiscordLogin } from '@/components/discord-login'
+import { Separator } from '@/components/ui/separator'
 import Link from 'next/link'
 
 export function LoginCard() {
   return (
     <div className='w-[350px] space-y-4'>
-      <Card className='p-6 w-full h-[340px] flex flex-col justify-between'>
-        <div>
-          <CardHeader>
-            <CardTitle
-              className={cn(
-                'text-center text-5xl font-extrabold',
-                pacificoFont.className
-              )}
-            >
-              Mitasgram
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className='text-center'>
-              Share what you&apos;re into with the people who get you.
-            </p>
-          </CardContent>
-        </div>
-        <CardFooter>
+      <Card className='p-8 w-full min-h-[340px] flex flex-col justify-between space-y-5'>
+        <CardHeader className='p-0 text-center space-y-8'>
+          <CardTitle
+            className={cn('text-5xl font-extrabold', pacificoFont.className)}
+          >
+            Mitasgram
+          </CardTitle>
+          <CardDescription className='text-lg'>
+            Share what you&apos;re into with the people who get you.
+          </CardDescription>
+        </CardHeader>
+        <CardFooter className='p-0 flex flex-col gap-8'>
           <LoginForm />
+
+          <div className='relative w-full'>
+            <Separator />
+            <p className='absolute top-0 translate-y-[-50%] left-[50%] translate-x-[-50%] px-5 py-2 bg-card mx-auto  text-sm'>
+              <span className='opacity-70'>OR</span>
+            </p>
+          </div>
+
+          <DiscordLogin>Log in with Discord</DiscordLogin>
         </CardFooter>
       </Card>
       <Card className='p-6'>
